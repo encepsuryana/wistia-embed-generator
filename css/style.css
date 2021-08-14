@@ -1,0 +1,33 @@
+#intro {
+    height: 800px;
+    /* Margin to fix overlapping fixed navbar */
+    margin-top: 58px;
+}
+
+@media (max-width: 991px) {
+    #intro {
+        /* Margin to fix overlapping fixed navbar */
+        margin-top: 45px;
+    }
+}
+
+.form-cover-hasil {
+    background-color: #e7e7e7;
+    padding: 15px 12px;
+    margin: 15px 12px;
+}
+
+.form-cover-hasil textarea {
+    margin-top: 12px;
+}
+
+.form-cover-hasil span {
+    color: #333;
+    font-weight: 700;
+}
+
+.form-cover {
+    background-color: #e7e7e7;
+    padding: 15px 12px;
+    margin: 15px 12px;
+}

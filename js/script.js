@@ -1,35 +1,52 @@
 function init() {
-    // Clear forms here
-    document.getElementById("input").value = "";
-    document.getElementById("output").value = "";
+  // Clear forms here
+  document.getElementById("input").value = "";
+  document.getElementById("output").value = "";
 }
 window.onload = init;
+
+function priview_embed() {
+  var content = document.getElementById("output").value;
+  
+
+  if (!content == "") {
+    Swal.fire({
+      title: "Preview Video",
+      html: content
+    });
+  } else {
+    swal.fire({
+      title: "Error!",
+      text: "Tidak ada Video yang tersedia",
+      icon: "error",
+      button: "OK",
+    });
+  }
+}
 
 function copyText() {
   var copy = $("#output").val();
   $("#output").select();
   document.execCommand("copy");
 
-  if (!copy == "" ) {
+  if (!copy == "") {
     Swal.fire({
-        icon: "success",
-        title: "Text copied to clipboard",
-        text: "Video Embed berhasil disalin",
-        confirmButtonColor: "#3085d6",
-        confirmButtonText: "Selesai",
-        
-        timer: 4000,
-      });
+      icon: "success",
+      title: "Text copied to clipboard",
+      text: "Video Embed berhasil disalin",
+      confirmButtonColor: "#3085d6",
+      confirmButtonText: "Selesai",
+
+      timer: 4000,
+    });
   } else {
     swal.fire({
-        title: "Error!",
-        text: "Tidak ada teks yang disalin",
-        icon: "error",
-        button: "OK",
-      });
+      title: "Error!",
+      text: "Tidak ada teks yang disalin",
+      icon: "error",
+      button: "OK",
+    });
   }
-  
-  
 }
 
 function onProcess() {
@@ -46,6 +63,13 @@ function onProcess() {
   }
 
   var input = document.getElementById("input").value;
+
+  var scriptEmbed = "";
+  scriptEmbed += htmlDecode(
+    '&lt;script src="https://fast.wistia.com/embed/medias/' +
+      input +
+      '.jsonp" async>&lt;/script&gt;&lt;script src="https://fast.wistia.com/assets/external/E-v1.js" async>&lt;/script&gt;'
+  );
 
   var code = "";
   code += htmlDecode(
@@ -89,7 +113,8 @@ function onProcess() {
     });
 
     document.getElementById("output").value = code;
-    console.log(code);
+    document.getElementById('scriptEmbed').innerHTML = code;
+    console.log(code, scriptEmbed);
   }
 
   // document.getElementById('hasil').innerHTML = code;

@@ -1,33 +1,56 @@
 #intro {
     height: 800px;
     /* Margin to fix overlapping fixed navbar */
-    margin-top: 58px;
+    margin-top: 45px;
 }
 
 @media (max-width: 991px) {
     #intro {
         /* Margin to fix overlapping fixed navbar */
-        margin-top: 45px;
+        margin-top: 35px;
     }
 }
 
 .form-cover-hasil {
-    background-color: #e7e7e7;
+    background-color: rgba(231, 231, 231, 0.55);
     padding: 15px 12px;
-    margin: 15px 12px;
+    margin: 25px 12px;
+    border-radius: 4px;
 }
 
 .form-cover-hasil textarea {
     margin-top: 12px;
+    border-radius: 4px;
 }
 
 .form-cover-hasil span {
-    color: #333;
-    font-weight: 700;
+    color: rgba(255, 255, 255, 0.8);
+    font-weight: 300;
+}
+
+.nav-link {
+    color: rgba(255, 255, 255, 0.8);
 }
 
 .form-cover {
-    background-color: #e7e7e7;
+    background-color: rgba(231, 231, 231, 0.55);
     padding: 15px 12px;
     margin: 15px 12px;
+    border-radius: 4px;
+}
+
+.form-control {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: .9rem;
+}
+
+.form-control:focus {
+    color: rgba(255, 255, 255, 0.8);
+    font-size: .9rem;
+}
+
+.form-outline .form-control:focus~.form-label,
+.form-outline .form-control~.form-label {
+    color: rgba(255, 255, 255, 0.6);
+    font-size: .9rem;
 }
